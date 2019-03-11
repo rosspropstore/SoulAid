@@ -1,0 +1,762 @@
+<html>
+<head>
+  <title>ARRAY GENERATION TEST </title>
+ <!-- <link rel="icon" href="favicon.png" type="image/x-icon"> -->
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900" rel="stylesheet">
+    <!-- 
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">-->
+</head>
+<body>   
+<!--STYLING-->
+<style>
+html{
+    font-family: "helvetica";
+    font-size: 13px;
+}
+body{
+    margin:0;
+}
+h1{
+    font-weight: bold;
+}
+/*NUMBER OF BLOCKS NEEDS ADDING HERE*/
+#bigboxcontainer0,
+#bigboxcontainer1,
+#bigboxcontainer2,
+#bigboxcontainer3,
+#bigboxcontainer4,
+#bigboxcontainer5,
+#bigboxcontainer6,
+#bigboxcontainer7,
+#bigboxcontainer8,
+#bigboxcontainer9{
+    transition: 1s;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    background-size: cover;
+}
+#bigboxcontainer0.open,
+#bigboxcontainer1.open,
+#bigboxcontainer2.open,
+#bigboxcontainer3.open,
+#bigboxcontainer4.open,
+#bigboxcontainer5.open,
+#bigboxcontainer6.open,
+#bigboxcontainer7.open,
+#bigboxcontainer8.open,
+#bigboxcontainer9.open{
+    background-position: top;
+    overflow: visible;
+    transition: 1s;
+    
+}
+
+#quotebox,
+#quotebox0,
+#quotebox1,
+#quotebox2,
+#quotebox3,
+#quotebox4,
+#quotebox5,
+#quotebox6,
+#quotebox7,
+#quotebox8,
+#quotebox9{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+    height: 100%;
+    max-height: 40%;
+    transition: 2s;
+    color: white;
+    transition: 2s;
+}
+#quotebox.open,
+#quotebox0.open,
+#quotebox1.open,
+#quotebox2.open,
+#quotebox3.open,
+#quotebox4.open,
+#quotebox5.open,
+#quotebox6.open,
+#quotebox7.open,
+#quotebox8.open,
+#quotebox9.open{
+    max-height: 150%;
+    transition: 2s;
+}   
+#quoteboxC{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+    height: 100%;
+    transition: 2s;
+    color: white;
+    max-height: 150%;
+}
+#quotecontainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+    width: 70%;
+    max-height: 40%;
+    color: white;
+    transition: 2s;
+    
+    
+}
+#quote{
+    margin-bottom: auto;
+    font-size: 2rem;
+}
+#line{
+    background-color: white;
+    width: 1px;
+    min-height: 50px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+#author{
+    font-size: 0.75em;
+    margin: auto;
+    padding: 10px;
+    
+}
+#authorcontainer{
+    font-size: 30px;
+    border: 1px solid white; 
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom:50px;
+    
+}
+/* expand button styles*/
+#showmore0,#showmore1,#showmore2,#showmore3,#showmore4,#showmore5,#showmore6,#showmore7,#showmore8,#showmore9{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    margin: auto;
+    transition: 1s;
+    transition-delay: 0.5s;
+}   
+img{
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    bottom: 0;
+    cursor: pointer;
+}
+#chosenquotescreenC{
+  height:100%;
+  display: block;
+  flex-direction: column;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#chosenquotescreenC h1{
+    color: white;
+}
+#popupsection{
+    right: -100%;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 120%;
+    max-height: 1500%;
+    z-index: 3;
+    top: 0;
+    transition-property: right;
+    transition: 0.3s;
+}
+#popupsection.open{
+    opacity: 1;
+    display: block;
+    position: absolute;
+    right: 0;
+    transition-property: right;
+    transition: 0.3s;
+}
+@media only screen and (max-width: 1000px) {
+    #authorcontainer{
+    font-size: 1.5rem;
+}
+    #quote{
+
+    font-size: 2rem;
+}
+
+
+}
+@media only screen and (max-width: 500px) {
+  #authorcontainer{
+    font-size: 1.4rem;
+}
+    #quote{
+
+    font-size: 1.4rem;
+}
+}
+</style>
+ 
+<!-- JAVA -->
+<script>
+//PUT QUOTES HERE
+var quotes = 'I AM THE GREATEST I SAID THAT EVEN BEFORE I KNEW I WAS.BE THE CHANGE THAT YOU WISH TO SEE IN THE WORLD.WHILE THERE IS LIFE, THERE IS HOPE.WHAT YOU FOCUS ON GROWS.THERE ARE NO PROBLEMS ONLY SOLUTIONS.DO WHAT YOU CANT.WORK HARD IN SILENCE, LET YOUR SUCCESS BE YOUR NOISE.THE TROUBLE IS YOU THINK YOU HAVE TIME.ACTION IS THE FOUNDATIONAL KEY TO ALL SUCCESS.THE MOST DANGEROUS THING YOU CAN DO IN LIFE IS PLAY IT SAFE. EFFORT IS GROSSLY UNDER RATED. EVERYONES AN ASS UNTIL THEY ARE A PIONEER. I AM NICE AT PING PONG. WE ARE WHAT WE REPEATEDLY DO, EXCELLENE, THEREFORE, IS NOT AN ACT, BUT A HABIT. ITS NOT THAT IM SO SMART, ITS JUST THAT I STAY WITH PROBLEMS LONGER' .split('.');
+
+//PUT AUTHOR HERE
+var authors = 'MUHAMMAD ALI,MUHATMA GANDHI,STEPHEN HAWKING,EASTER HICKS,JOHN LENNON,CASEY NEISTAT,FRANK OCEAN,BUDDHA,PABLO PICASSO,CASEY NEISTAT,GARY VAYNERCHUK,GARY VAYNERCHUK,KANYE WEST,ARISTOTLE,ALBERT EINSTEIN' .split(',');
+
+//PUT BACKGROUNDS HERE
+var bigSize = ["url('https://rossshawdesigncom.files.wordpress.com/2019/02/maze-1.jpg')",
+                 "url('https://rossshawdesigncom.files.wordpress.com/2019/02/lights-1.jpg')",
+                 "url('https://rossshawdesigncom.files.wordpress.com/2019/02/lantern.jpg')",
+                 "url('https://rossshawdesigncom.files.wordpress.com/2019/02/gig1-1.jpg')",
+                 "url('https://rossshawdesigncom.files.wordpress.com/2019/02/toykoship-1.jpg')",
+                 "url('https://rossshawdesigncom.files.wordpress.com/2019/02/berlin1-1.jpg')",
+               "url('https://rossshawdesigncom.files.wordpress.com/2019/02/orangeyellow.jpg')",
+                "url('https://rossshawdesigncom.files.wordpress.com/2019/02/redpink.jpg')",
+                "url('https://rossshawdesigncom.files.wordpress.com/2019/02/bluecyan.jpg')",
+                "url('https://rossshawdesigncom.files.wordpress.com/2019/02/grey.jpg')",
+                 ];
+
+//GLOBAL VARIABLE STORING ORDER OF RANDOM BACKGROUNDS
+var RandNumArray = [];
+
+//EDIT NUMBER OF MODUALS HERE;
+var MODS = 10;
+
+//CONTAINER FOR ALL ON SCREEN CONTENT
+var EVERYTHING = document.createElement('div');
+document.body.appendChild(EVERYTHING);
+
+//GENERATE MODUALS WITH RANDOM QUOTES AND BACKGROUNDS
+for (var i = 0; i < MODS; i++) {
+//MODUAL BOX STRUCTURE  + SET IDS
+    var bigboxcontainer = document.createElement('div');
+        bigboxcontainer.id = "bigboxcontainer" + [i] ; 
+    var upperquoteauthorcont = document.createElement('div');
+        upperquoteauthorcont.id = "quotebox" + [i]; 
+    var quotecontainer = document.createElement('div');
+        quotecontainer.id ="quotecontainer";
+    var TEXTquote = document.createElement('h1');
+        TEXTquote.id = "quote";
+    var middleline = document.createElement('span');
+        middleline.id = "line";
+    var authorcontainer = document.createElement('div');
+        authorcontainer.id ="authorcontainer";
+    var TEXTauthor = document.createElement('h1');
+        TEXTauthor.id = "author";
+    var showmore = document.createElement('a');
+        showmore.id ="showmore" + i;
+    var dotsimage = document.createElement('img'); 
+//CREATE STRUCTURE
+    //BIG BOX
+    bigboxcontainer.appendChild(upperquoteauthorcont);
+    //upper quote container in big box    
+    upperquoteauthorcont.appendChild(quotecontainer);
+    quotecontainer.appendChild(TEXTquote);
+    upperquoteauthorcont.appendChild(middleline);
+    upperquoteauthorcont.appendChild(authorcontainer);    
+    authorcontainer.appendChild(TEXTauthor);
+    //show more in big box
+    bigboxcontainer.appendChild(showmore);
+    showmore.appendChild(dotsimage);
+//ADDING TEXT TO BOXES 
+    //ADDING TEXT (FROM ABOVE ARRAYS) INTO HTML
+    var rand_num = Math.floor(Math.random() * quotes.length);
+    TEXTquote.innerHTML = quotes[rand_num];
+    TEXTauthor.innerHTML = authors[rand_num];
+    //ADD QUOTE AND AUTHOR ARRAY POSITION FOR EACH QUOTE
+    RandNumArray[i] = rand_num; 
+    //SET DOTS BUTTON IMAGE
+    showmore.innerHTML = "<img src='./dots_button.png'>"
+//PUT MODUAL IN 'EVERYTHING' IN BODY.
+    EVERYTHING.appendChild(bigboxcontainer);
+//STYLING  
+    //SET RANDOM BACKGROUNDS
+    var random= Math.floor(Math.random() * bigSize.length) + 0;
+    bigboxcontainer.style.backgroundImage=bigSize[random];
+};
+
+//VARIABLES FOR POP UP SECTIONS
+var popupsection = document.createElement('div');
+popupsection.id = "popupsection"; popupsection.className = "closed";
+
+//GENERATING POP UP - FOR NUMBER OF BACKGROUNDS IN BIGSIZE ARRAY
+for (var x = 0; x < bigSize.length; x++) {
+//MODUAL BOX STRUCTURE  + SET IDS
+  var chosenquotescreenC = document.createElement('div');
+    chosenquotescreenC.id = "chosenquotescreenC";
+  var upperquoteauthorcontC = document.createElement('div');
+    upperquoteauthorcontC.id = "quoteboxC" ; upperquoteauthorcontC.className = "boxCC"; 
+  var quotecontainerC = document.createElement('div');
+    quotecontainerC.id ="quotecontainer";
+  var middlelineC = document.createElement('span');
+    middlelineC.id = "line";
+  var authorcontainerC = document.createElement('div');
+    authorcontainerC.id ="authorcontainer";
+  var TEXTquoteC = document.createElement('h1');
+    TEXTquoteC.id = "quote"; TEXTquoteC.className = "quoteCC";
+  var TEXTauthorC = document.createElement('h1');
+     TEXTauthorC.id = "author"; TEXTauthorC.className = "authorCC";
+//CREATE STRUCTURE
+  //BIG BOX
+  popupsection.appendChild(chosenquotescreenC);
+  chosenquotescreenC.appendChild(upperquoteauthorcontC);
+  upperquoteauthorcontC.appendChild(quotecontainerC);
+  quotecontainerC.appendChild(TEXTquoteC);
+  upperquoteauthorcontC.appendChild(middlelineC);  
+  upperquoteauthorcontC.appendChild(authorcontainerC);    
+  authorcontainerC.appendChild(TEXTauthorC);
+//SET BACKGROUND OF POPUP MODUAL TO BACKGROUND IN POSITION [X]
+  chosenquotescreenC.style.backgroundImage=bigSize[x];
+};
+
+//GENERATE POPUP SECTIONS IN OVER ALL CONTENT
+EVERYTHING.appendChild(popupsection);
+
+//FUNCTION ON BOXES
+//EXPANDING [EACH INSTANCE NEEDS IT OWN FUNCTION]
+showmore0.onclick = function(){
+   if(quotebox0.className == "open"){
+        //shrink box
+        quotebox0.className = "";
+        bigboxcontainer0.className = "";
+    } else {
+        //expand the box
+        quotebox0.className = "open";
+        bigboxcontainer0.className = "open";
+    }
+    };
+showmore1.onclick = function(){
+   if(quotebox1.className == "open"){
+        //shrink box
+        quotebox1.className = "";
+        bigboxcontainer1.className = "";
+    } else {
+        //expand the box
+        quotebox1.className = "open";
+        bigboxcontainer1.className = "open";
+    }
+    
+};
+showmore2.onclick = function(){
+   if(quotebox2.className == "open"){
+        //shrink box
+        quotebox2.className = "";
+        showmore2.className = "";
+        bigboxcontainer2.className = "";
+    } else {
+        //expand the box
+        quotebox2.className = "open";
+        showmore2.className = "open";
+        bigboxcontainer2.className = "open";
+    }
+    };
+showmore3.onclick = function(){
+   if(quotebox3.className == "open"){
+        //shrink box
+        quotebox3.className = "";
+        showmore3.className = "";
+        bigboxcontainer3.className = "";
+    } else {
+        //expand the box
+        quotebox3.className = "open";
+        showmore3.className = "open";
+        bigboxcontainer3.className = "open";
+    }
+    };
+showmore4.onclick = function(){
+   if(quotebox4.className == "open"){
+        //shrink box
+        quotebox4.className = "";
+        showmore4.className = "";
+        bigboxcontainer4.className = "";
+    } else {
+        //expand the box
+        quotebox4.className = "open";
+        showmore4.className = "open";
+        bigboxcontainer4.className = "open";
+    }
+    };
+showmore5.onclick = function(){
+   if(quotebox5.className == "open"){
+        //shrink box
+        quotebox5.className = "";
+        showmore5.className = "";
+        bigboxcontainer5.className = "";
+    } else {
+        //expand the box
+        quotebox5.className = "open";
+        showmore5.className = "open";
+        bigboxcontainer5.className = "open";
+    }
+    };
+showmore6.onclick = function(){
+   if(quotebox6.className == "open"){
+        //shrink box
+        quotebox6.className = "";
+        showmore6.className = "";
+        bigboxcontainer6.className = "";
+    } else {
+        //expand the box
+        quotebox6.className = "open";
+        showmore6.className = "open";
+        bigboxcontainer6.className = "open";
+    }
+    };
+showmore7.onclick = function(){
+   if(quotebox7.className == "open"){
+        //shrink box
+        quotebox7.className = "";
+        showmore7.className = "";
+        bigboxcontainer7.className = "";
+    } else {
+        //expand the box
+        quotebox7.className = "open";
+        showmore7.className = "open";
+        bigboxcontainer7.className = "open";
+    }
+    };
+showmore8.onclick = function(){
+   if(quotebox8.className == "open"){
+        //shrink box
+        quotebox8.className = "";
+        showmore8.className = "";
+        bigboxcontainer8.className = "";
+    } else {
+        //expand the box
+        quotebox8.className = "open";
+        showmore8.className = "open";
+        bigboxcontainer8.className = "open";
+    }
+    };
+showmore9.onclick = function(){
+   if(quotebox9.className == "open"){
+        //shrink box
+        quotebox9.className = "";
+        showmore9.className = "";
+        bigboxcontainer9.className = "";
+    } else {
+        //expand the box
+        quotebox9.className = "open";
+        showmore9.className = "open";
+        bigboxcontainer9.className = "open";
+    }
+    };
+// ADD MORE BASED ON NUMBER OF MODUALS^
+//VARIABLES NEEDED FOR QUOTE SELCTION
+var openNEW = document.getElementById("popupsection");
+var openQUOTE = document.getElementsByClassName("quoteCC");
+var openAUTHOR = document.getElementsByClassName("authorCC");
+var quoteboxes = document.getElementsByClassName("boxCC");
+
+//SCROLL BACK TO TOP
+function toppopupFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+
+//SCROLLING TO POINTS
+var scrollpoint;
+var scrolltobox;
+scrolltobox = ("quotebox9");
+
+//POP UP ANIMATION AND SETTING CONTENTS
+// CHANGE QUOTE BOX NUMBER AND VALUE OF N AS PER
+quotebox0.onclick = function(){
+    var N = 0;
+    
+    if(openNEW.className == "open"){
+        //shrink box
+        openNEW.className = "";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+    } else {
+        //EXPAND THE BOX AND SET THE QUOTE
+        openNEW.className = "open";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        } 
+        toppopupFunction();
+    }
+    scrolltobox = ("quotebox0");
+}; 
+quotebox1.onclick = function(){
+    var N = 1;
+    if(openNEW.className == "open"){
+        //shrink box
+        openNEW.className = "";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+    } else {
+        //EXPAND THE BOX AND SET THE QUOTE
+        openNEW.className = "open";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+        toppopupFunction();
+    }
+    scrolltobox = ("quotebox1");
+}; 
+quotebox2.onclick = function(){
+    var N = 2;
+   
+    if(openNEW.className == "open"){
+        //shrink box
+        openNEW.className = "";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+    } else {
+        //EXPAND THE BOX AND SET THE QUOTE
+        openNEW.className = "open";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+        toppopupFunction();
+    }
+    scrolltobox = ("quotebox2");
+}; 
+quotebox3.onclick = function(){
+    var N = 3;
+    if(openNEW.className == "open"){
+        //shrink box
+        openNEW.className = "";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+    } else {
+        //EXPAND THE BOX AND SET THE QUOTE
+        openNEW.className = "open";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+      toppopupFunction();
+    }
+    scrolltobox = ("quotebox3");
+};
+quotebox4.onclick = function(){
+    var N = 4;
+  
+    if(openNEW.className == "open"){
+        //shrink box
+        openNEW.className = "";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+    } else {
+        //EXPAND THE BOX AND SET THE QUOTE
+        openNEW.className = "open";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }  
+                toppopupFunction();
+    }
+    scrolltobox = ("quotebox4");
+}; 
+quotebox5.onclick = function(){
+    var N = 5;
+   
+    if(openNEW.className == "open"){
+        //shrink box
+        openNEW.className = "";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+    } else {
+        //EXPAND THE BOX AND SET THE QUOTE
+        openNEW.className = "open";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        } 
+                toppopupFunction();
+    }
+    scrolltobox = ("quotebox5");
+}; 
+quotebox6.onclick = function(){
+    var N = 6;
+    
+    if(openNEW.className == "open"){
+        //shrink box
+        openNEW.className = "";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+    } else {
+        //EXPAND THE BOX AND SET THE QUOTE
+        openNEW.className = "open";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+                toppopupFunction();
+    }
+    scrolltobox = ("quotebox6");
+}; 
+quotebox7.onclick = function(){
+    var N = 7;
+    
+    if(openNEW.className == "open"){
+        //shrink box
+        openNEW.className = "";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+    } else {
+        //EXPAND THE BOX AND SET THE QUOTE
+        openNEW.className = "open";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }  
+                toppopupFunction();
+    }
+    scrolltobox = ("quotebox7");
+}; 
+quotebox8.onclick = function(){
+    var N = 8;
+    if(openNEW.className == "open"){
+        //shrink box
+        openNEW.className = "";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+    } else {
+        //EXPAND THE BOX AND SET THE QUOTE
+        openNEW.className = "open";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+        toppopupFunction();
+    }
+    scrolltobox = ("quotebox8");
+}; 
+quotebox9.onclick = function(){
+    var N = 9;
+    if(openNEW.className == "open"){
+        //shrink box
+        openNEW.className = "";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }   
+    } else {
+        //EXPAND THE BOX AND SET THE QUOTE
+        openNEW.className = "open";
+        for(var i = 0; i < openQUOTE.length; i++) {
+        openQUOTE[i].innerHTML = quotes[RandNumArray[N]];
+        }   
+        for(var i = 0; i < openAUTHOR.length; i++) {
+        openAUTHOR[i].innerHTML = authors[RandNumArray[N]];
+        }
+        toppopupFunction();
+    }
+    scrolltobox = ("quotebox9");
+}; 
+
+function Scrollto(){
+document.getElementById(scrolltobox).scrollIntoView();
+}
+
+//CLOSE POP UP
+popupsection.onclick = function(){
+    if(openNEW.className == "open"){
+        //shrink box
+        openNEW.className = "";
+        
+       
+    } else {
+        //expand the box
+        openNEW.className = "open";
+    }
+    
+    Scrollto();
+    
+};  
+</script>    
+    
+ <!--   
+<script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="java.js"></script>
+
+-->
+    
+</body>
+</html>
