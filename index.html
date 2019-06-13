@@ -1,342 +1,67 @@
 <html>
 <head>
   <title>ARRAY GENERATION TEST </title>
+    
  <!-- <link rel="icon" href="favicon.png" type="image/x-icon"> -->
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <meta name = "viewport" content ="width=device-width, user-scalable=no">
+
+<meta name = "viewport" content ="width=device-width, user-scalable=no">
+    
 </head>
+<body>   
+    <div class="headerbar">
+        
+        <a href="https://rossshawdesign.com/"> <img class="backtosite" src="https://rossshawdesigncom.files.wordpress.com/2019/05/arrow_button-1.png"> </a>
+        
+        <input type="image" class="headerbarlogo" src= "https://rossshawdesigncom.files.wordpress.com/2019/05/soul_aid_final_title_logo-nopadding.png" onClick="document.location.reload(true)">
+        
+           
+            <img id="headerbarhelp" src="https://rossshawdesigncom.files.wordpress.com/2019/05/help_button.png">
+    </div>
+    <div id="howtousebig" class="closed">
+        <div class="howtousecontents">
+            <div class="howtouse"> 
+        <div class="howto-box">
+            <img src=https://rossshawdesigncom.files.wordpress.com/2019/05/minus_button.png>
+            <p>HIDE TEXT</p>
+        </div>
+        <div class="howto-box">
+            <img src=https://rossshawdesigncom.files.wordpress.com/2019/05/dots_button.png>
+            <p>FULL SCREEN</p>
+        </div>
+        <div class="howto-box">
+            <img src=https://rossshawdesigncom.files.wordpress.com/2019/05/arrow_button-1.png>
+            <p>MORE FROM QUOTE</p>
+        </div>
+        </div>
+        <div class="howto-bottomtext">
+            
+            <div class="howtolink"></div>
+                
+            <a id="howtoclose">HIDE</a>
+            
+            <div class="howtolink">
+                   <a class="howtotextitem" href="https://www.instagram.com/rossshawdesign/">MORE FROM<br/> SOUL AID</a>
+            </div>
+        </div>
+       
+      
+       
+        
+        </div>
+    </div>
+  
     
-<body>
-    <style>
-        html{
-    font-family: "helvetica";
-    font-size: 13px;
-    letter-spacing: 1px;
-}
-
-body{
-    margin:0;
-}
-
-#printtemp{
-display: flex;
-position: fixed; 
-font-size: 40px;
-}
-
-h1{
-    font-weight: bold;
-}
-/*NUMBER OF BLOCKS NEEDS ADDING HERE*/
-#bigboxcontainer0,
-#bigboxcontainer1,
-#bigboxcontainer2,
-#bigboxcontainer3,
-#bigboxcontainer4,
-#bigboxcontainer5,
-#bigboxcontainer6,
-#bigboxcontainer7,
-#bigboxcontainer8,
-#bigboxcontainer9,
-#bigboxcontainer10,
-#bigboxcontainer11,
-#bigboxcontainer12,
-#bigboxcontainer13,
-#bigboxcontainer14,
-#bigboxcontainer15,
-#bigboxcontainer16,
-#bigboxcontainer17,
-#bigboxcontainer18,
-#bigboxcontainer19
-{
-    transition: 1s;
-    background-repeat: no-repeat;
-    background-position: top;
-    overflow: hidden;
-    background-size: cover;
-    background-color: deeppink;
-}
-
-#bigboxcontainer0.open,
-#bigboxcontainer1.open,
-#bigboxcontainer2.open,
-#bigboxcontainer3.open,
-#bigboxcontainer4.open,
-#bigboxcontainer5.open,
-#bigboxcontainer6.open,
-#bigboxcontainer7.open,
-#bigboxcontainer8.open,
-#bigboxcontainer9.open,
-#bigboxcontainer10.open,
-#bigboxcontainer11.open,
-#bigboxcontainer12.open,
-#bigboxcontainer13.open,
-#bigboxcontainer14.open,
-#bigboxcontainer15.open,
-#bigboxcontainer16.open,
-#bigboxcontainer17.open,
-#bigboxcontainer18.open,
-#bigboxcontainer19.open
-
-{
-    background-position: center;
-    overflow: visible;
-    transition: 1s;
-    
-}
-
-#quotebox,
-#quotebox0,
-#quotebox1,
-#quotebox2,
-#quotebox3,
-#quotebox4,
-#quotebox5,
-#quotebox6,
-#quotebox7,
-#quotebox8,
-#quotebox9,
-#quotebox10,
-#quotebox11,
-#quotebox12,
-#quotebox13,
-#quotebox14,
-#quotebox15,
-#quotebox16,
-#quotebox17,
-#quotebox18,
-#quotebox19
-{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    margin: 0;
-    height: 100%;
-    max-height: 40%;
-    transition: 2s;
-    color: white;
-    transition: 2s;
-}
-
-#quotebox.open,
-#quotebox0.open,
-#quotebox1.open,
-#quotebox2.open,
-#quotebox3.open,
-#quotebox4.open,
-#quotebox5.open,
-#quotebox6.open,
-#quotebox7.open,
-#quotebox8.open,
-#quotebox9.open,
-#quotebox10.open,
-#quotebox11.open,
-#quotebox12.open,
-#quotebox13.open,
-#quotebox14.open,
-#quotebox15.open,
-#quotebox16.open,
-#quotebox17.open,
-#quotebox18.open,
-#quotebox19.open
-{
-    max-height: 150%;
-    transition: 2s;
-}
-    
-#quoteboxC{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    margin: 0;
-    height: 100%;
-    transition: 2s;
-    color: white;
-    max-height: 150%;
-}
-
-
-#quotecontainer{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    margin: 20px auto;
-    width: 70%;
-    max-height: 40%;
-    color: white;
-    transition: 2s;
-   
-    
-    
-}
-
-#quote{
-    margin-bottom: auto;
-    font-size: 2.5rem;
-}
-
-
-#line{
-    background-color: white;
-    width: 1px;
-    min-height: 50px;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-#author{
-    font-size: 0.75em;
-    margin: auto;
-    padding: 10px;
-    
-}
-
-#authorcontainer{
-    font-size: 2rem;
-    border: 1px solid white; 
-    max-width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom:50px;
-    
-}
-
-#creditbar0,#creditbar1,#creditbar2,#creditbar3,#creditbar4,#creditbar5,#creditbar6,#creditbar7,#creditbar8,#creditbar9,#creditbar10,#creditbar11,#creditbar12,#creditbar13,#creditbar14,#creditbar15,#creditbar16,#creditbar17,#creditbar18,#creditbar19{
-    display: block;
-    justify-content: center;
-    flex-direction: column;
-    text-align: right;
-    
-    
-}
-
-#credittext0,#credittext1,#credittext2,#credittext3,#credittext4,#credittext5,#credittext6,#credittext7,#credittext8,#credittext9,#credittext10,#credittext11,#credittext12,#credittext13,#credittext14,#credittext15,#credittext16,#credittext17,#credittext18,#credittext19, 
-#creditlink0,#creditlink1,#creditlink2,#creditlink3,#creditlink4,#creditlink5,#creditlink6,#creditlink7,#creditlink8,#creditlink9,#creditlink10,#creditlink11,#creditlink12,#creditlink13,#creditlink14,#creditlink15,#creditlink16,#creditlink17,#creditlink18,#creditlink19{
-    font-size: 15px;
-    color: white;
-    padding: 5px;
-}
-
-a{
-color: orange;
-
-}
-
-a:any-link{
-color: orange;
-text-decoration: none;
-}
-
-
-a:hover{
-    color: yellow;
-    text-decoration: none;
-}
-
-
-
-
-
-/* expand button styles*/
-#showmore0,#showmore1,#showmore2,#showmore3,#showmore4,#showmore5,#showmore6,#showmore7,#showmore8,#showmore9,#showmore10,#showmore11,#showmore12,#showmore13,#showmore14,#showmore15,#showmore16,#showmore17,#showmore18,#showmore19{
-    height: 100px;
-    width: 100px;
-    display: flex;
-    cursor: pointer;
-    justify-content: center;
-    margin: auto;
-    transition: 1s;
-    transition-delay: 0.5s;
-}
-    
-img{
-    justify-content: center;
-    height: 50px;
-    width: 50px;
-    margin: 10px;
-    bottom: 0;
-    cursor: pointer;
-}
-
-
-#chosenquotescreenC{
-  height:100%;
-  display: block;
-  flex-direction: column;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-    background-color: deeppink;
-}
-
-#chosenquotescreenC h1{
-    color: white;
-}
-
-#popupsection{
-    right: -100%;
-    position: fixed;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 120%;
-    max-height: 1500%;
-    z-index: 3;
-    top: 0;
-    transition-property: right;
-    transition: 0.3s;
-}
-
-#popupsection.open{
-    opacity: 1;
-    display: block;
-    position: absolute;
-    right: 0;
-    transition-property: right;
-    transition: 0.3s;
-}
-
-
-
-@media only screen and (max-width: 1000px) {
-    #authorcontainer{
-    font-size: 1.5rem;
-}
-    #quote{
-
-    font-size: 2rem;
-}
-
-
-}
-
-
-@media only screen and (max-width: 500px) {
-  #authorcontainer{
-    font-size: 1.5rem;
-}
-    #quote{
-
-    font-size: 2rem;
-}
-        }
-    </style>
-    
-    
-    
-<script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
+        
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
     
-    <script>
-        var quotes = [
+<script>
+    
+    var quotes = [
     "I AM THE GREATEST, I SAID THAT EVEN BEFORE I KNEW I WAS",
     "BE THE CHANGE THAT YOU WISH TO SEE IN THE WORLD",
     "WHILE THERE IS LIFE, THERE IS HOPE",
@@ -962,67 +687,111 @@ var authors = [
 ];
 //PUT BACKGROUNDS HERE
 var bigSize = ["url('https://rossshawdesigncom.files.wordpress.com/2019/02/maze-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/02/lights-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/02/gig1-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/02/berlin1-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/02/orangeyellow.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/02/redpink.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/02/bluecyan.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/02/grey.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-10-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-9-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-8-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-7-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-6-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-5-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-4-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-3-3.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-2-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-1-3.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-15-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-14-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-13-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-12-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-11-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-10-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-9-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-8-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-7-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-6-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-5-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-4-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-3-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-2-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-1-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-10-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-9-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-8-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-7-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-6-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-5-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-4-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-3-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-2-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-1-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/hazeltaylor-1.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/hazeltaylor-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/hazeltaylor-3.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/hazeltaylor-4.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/hazeltaylor-5.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/hazeltaylor-6.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/hazeltaylor-7.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/ryanbrown-6.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/ryanbrown-5.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/ryanbrown-7.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/ryanbrown-2.jpg')",
-                "url('https://rossshawdesigncom.files.wordpress.com/2019/04/ryanbrown-1.jpg')",
-               
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/rossshaw6-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/rossshaw3.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/rossshaw5.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/02/orangeyellow.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/02/redpink.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/02/bluecyan.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/02/grey.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-10-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-9-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-8-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-7-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-6-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-5-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-4-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-3-3.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-2-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/georgedupree-1-3.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-15-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-14-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-13-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-12-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-11-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-10-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-9-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-8-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-7-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-6-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-5-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-4-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-3-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-2-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/danrowland-1-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-10-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-9-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-8-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-7-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-6-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-5-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-4-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-3-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-2-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/bennourse-1-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/hazeltaylor-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/hazeltaylor-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/hazeltaylor-3.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/hazeltaylor-4.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/hazeltaylor-5.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/hazeltaylor-6.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/hazeltaylor-7.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/ryanbrown-6.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/ryanbrown-5.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/ryanbrown-7.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/ryanbrown-2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/04/ryanbrown-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/joesparkes_1.jpg')", 
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/joesparkes_2.jpg')", 
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/joesparkes_3.jpg')", 
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/joesparkes_4.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/joesparkes_5.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/joesparkes_6.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/rosiemay_1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/rosiemay_2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/rosiemay_3.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/rosiemay_4.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/rosiemay_5.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/rosiemay_6.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/willclaridge_1.jpeg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/willclaridge_2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/willclaridge_3.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/willclaridge_4.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/willclaridge_5.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/willclaridge_6.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/willclaridge_7.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/willclaridge_8.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/05/willclaridge_9.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/alexunsworth1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/alexunsworth2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/alexunsworth3.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/alexunsworth4.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/alexunsworth5.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/alexunsworth6.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/alexunsworth7.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/alexunsworth8.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/jessicaleslie1.jpeg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/jessicaleslie2.jpeg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/jessicaleslie3.jpeg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/jessicaleslie4.jpeg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/jessicaleslie5.jpeg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/jessicaleslie6.jpeg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/jessicaleslie7.jpeg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/jessicaleslie8.jpeg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/laurenbills1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/laurenbills2.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/laurenbills3.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/kieranstewart-1-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/kieranstewart-2-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/kieranstewart-3-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/kieranstewart-4-1.jpg')",
+"url('https://rossshawdesigncom.files.wordpress.com/2019/06/kieranstewart-5-1.jpg')"
               ];
 var creditext = [
     "Photography By",
-    "Installation By Lee Bull Photgraphed by",
-    "Photography By",
-    "Photography By",
+    "Concept Art by",
+    "Concept Art by",
+    "Concept Art by",
     "",
     "",
     "",
@@ -1073,14 +842,59 @@ var creditext = [
     "Photography by",
     "Photography by",
     "Photography by",
-    "Photography by"
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Untitled, 6'x4' by",
+    "'Resonating Ripples', 6'x4' by",
+    "'From the Crowd', 6'x4' by",
+    "'Summer Daze III', 6'x4' by",
+    "'Beach of a Day', 6'x4' by",
+    "'Camden Crowds', 6'x4' by",
+    "'Huh?', 6'x4' by",
+    "'After the Rain', 6'x4' by",
+    "'Mind the Gap', 6'x4' by",
+    "Painting by,",
+    "Painting by",
+    "Painting by",
+    "Photomontage by",
+    "Artwork by",
+    "Painting by",
+    "Artwork by",
+    "Painting and Exhibition by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Photography by",
+    "Illustration by",
+    "Illustration by",
+    "Illustration by",
+    "Illustration by",
+    "Illustration by",
+    "Illustration by",
+    "Illustration by",
+    "Illustration by"
 ];
 
 var creditlinks = [
-  '<a href="https://www.instagram.com/rshawlynot/" target="_blank">Ross Shaw</a>',
-    '<a href="https://www.instagram.com/rshawlynot/" target="_blank">Ross Shaw</a>',
-    '<a href="https://www.instagram.com/rshawlynot/" target="_blank">Ross Shaw</a>',
-    '<a href="https://www.instagram.com/rshawlynot/" target="_blank">Ross Shaw</a>',
+  '<a href="https://www.instagram.com/rossshawdesign/" target="_blank">Ross Shaw</a>',
+    '<a href="https://www.instagram.com/rossshawdesign/" target="_blank">Ross Shaw</a>',
+    '<a href="https://www.instagram.com/rossshawdesign/" target="_blank">Ross Shaw</a>',
+    '<a href="https://www.instagram.com/rossshawdesign/" target="_blank">Ross Shaw</a>',
     '<a href="https://www.instagram.com/sundayvideo/" target="_blank">Soul Aid</a>',
     '<a href="https://www.instagram.com/sundayvideo/" target="_blank">Soul Aid</a>',
     '<a href="https://www.instagram.com/sundayvideo/" target="_blank">Soul Aid</a>',
@@ -1131,7 +945,52 @@ var creditlinks = [
     '<a href="https://www.instagram.com/ryskibro/" target="_blank">Ryan Brown</a>',
     '<a href="https://www.instagram.com/ryskibro/" target="_blank">Ryan Brown</a>',
     '<a href="https://www.instagram.com/ryskibro/" target="_blank">Ryan Brown</a>',
-    '<a href="https://www.instagram.com/ryskibro/" target="_blank">Ryan Brown</a>'];
+    '<a href="https://www.instagram.com/ryskibro/" target="_blank">Ryan Brown</a>',
+    '<a href="https://www.instagram.com/joesparkesart/" target="_blank">Joe Sparkes</a>',
+    '<a href="https://www.instagram.com/joesparkesart/" target="_blank">Joe Sparkes</a>',
+    '<a href="https://www.instagram.com/joesparkesart/" target="_blank">Joe Sparkes</a>',
+    '<a href="https://www.instagram.com/joesparkesart/" target="_blank">Joe Sparkes</a>',
+    '<a href="https://www.instagram.com/joesparkesart/" target="_blank">Joe Sparkes</a>',
+    '<a href="https://www.instagram.com/joesparkesart/" target="_blank">Joe Sparkes</a>',
+    '<a href="https://www.instagram.com/rosielouisemay/" target="_blank">Rosie May</a>',
+    '<a href="https://www.instagram.com/rosielouisemay/" target="_blank">Rosie May</a>',
+    '<a href="https://www.instagram.com/rosielouisemay/" target="_blank">Rosie May</a>',
+    '<a href="https://www.instagram.com/rosielouisemay/" target="_blank">Rosie May</a>',
+    '<a href="https://www.instagram.com/rosielouisemay/" target="_blank">Rosie May</a>',
+    '<a href="https://www.instagram.com/rosielouisemay/" target="_blank">Rosie May</a>',
+    '<a href="https://www.instagram.com/willclaridge.art/" target="_blank">Will Claridge</a>',
+    '<a href="https://www.instagram.com/willclaridge.art/" target="_blank">Will Claridge</a>',
+    '<a href="https://www.instagram.com/willclaridge.art/" target="_blank">Will Claridge</a>',
+    '<a href="https://www.instagram.com/willclaridge.art/" target="_blank">Will Claridge</a>',
+    '<a href="https://www.instagram.com/willclaridge.art/" target="_blank">Will Claridge</a>',
+    '<a href="https://www.instagram.com/willclaridge.art/" target="_blank">Will Claridge</a>',
+    '<a href="https://www.instagram.com/willclaridge.art/" target="_blank">Will Claridge</a>',
+    '<a href="https://www.instagram.com/willclaridge.art/" target="_blank">Will Claridge</a>',
+    '<a href="https://www.instagram.com/willclaridge.art/" target="_blank">Will Claridge</a>',
+'<a href="https://www.instagram.com/alexaltiair/" target="_blank">Alex Unsworth</a>',
+'<a href="https://www.instagram.com/alexaltiair/" target="_blank">Alex Unsworth</a>',
+'<a href="https://www.instagram.com/alexaltiair/" target="_blank">Alex Unsworth</a>',
+'<a href="https://www.instagram.com/alexaltiair/" target="_blank">Alex Unsworth</a>',
+'<a href="https://www.instagram.com/alexaltiair/" target="_blank">Alex Unsworth</a>',
+'<a href="https://www.instagram.com/alexaltiair/" target="_blank">Alex Unsworth</a>',
+'<a href="https://www.instagram.com/alexaltiair/" target="_blank">Alex Unsworth</a>',
+'<a href="https://www.instagram.com/alexaltiair/" target="_blank">Alex Unsworth</a>',
+'<a href="https://www.instagram.com/jessicaleslietextiles/" target="_blank">Jessica Leslie</a>',
+'<a href="https://www.instagram.com/jessicaleslietextiles/" target="_blank">Jessica Leslie</a>',
+'<a href="https://www.instagram.com/jessicaleslietextiles/" target="_blank">Jessica Leslie</a>',
+'<a href="https://www.instagram.com/jessicaleslietextiles/" target="_blank">Jessica Leslie</a>',
+'<a href="https://www.instagram.com/jessicaleslietextiles/" target="_blank">Jessica Leslie</a>',
+'<a href="https://www.instagram.com/jessicaleslietextiles/" target="_blank">Jessica Leslie</a>',
+'<a href="https://www.instagram.com/jessicaleslietextiles/" target="_blank">Jessica Leslie</a>',
+'<a href="https://www.instagram.com/jessicaleslietextiles/" target="_blank">Jessica Leslie</a>',
+'<a href="https://www.instagram.com/lauren_bills_illustration/" target="_blank">Lauren Bills</a>',
+'<a href="https://www.instagram.com/lauren_bills_illustration/" target="_blank">Lauren Bills</a>',
+'<a href="https://www.instagram.com/lauren_bills_illustration/" target="_blank">Lauren Bills</a>',
+'<a href="https://www.instagram.com/kieranstewartillustration/" target="_blank">Kieran Stewart</a>',
+'<a href="https://www.instagram.com/kieranstewartillustration/" target="_blank">Kieran Stewart</a>',
+'<a href="https://www.instagram.com/kieranstewartillustration/" target="_blank">Kieran Stewart</a>',
+'<a href="https://www.instagram.com/kieranstewartillustration/" target="_blank">Kieran Stewart</a>',
+'<a href="https://www.instagram.com/kieranstewartillustration/" target="_blank">Kieran Stewart</a>'];
 
 
 //GLOBAL VARIABLE STORING ORDER OF RANDOM BACKGROUNDS
@@ -1167,7 +1026,12 @@ for (i = 0; i < MODS; i += 1) {
     TEXTauthor.id = "author";
     var showmore = document.createElement('a');
     showmore.id = "showmore" + i;
-    var dotsimage = document.createElement('img');
+    var dotsimage = document.createElement('div');
+    dotsimage.id = "dotsimage"  + i;
+    var arrowimage = document.createElement('div');
+    arrowimage.id = "arrowimage"  + i;
+    var minusimage = document.createElement('div');
+    minusimage.id = "minusimage"  + i;
     var creditbar = document.createElement('div');
     creditbar.id = "creditbar" + i;
     var credit = document.createElement('span');
@@ -1185,7 +1049,10 @@ for (i = 0; i < MODS; i += 1) {
     authorcontainer.appendChild(TEXTauthor);
     //show more in big box
     bigboxcontainer.appendChild(showmore);
+    showmore.appendChild(minusimage);
     showmore.appendChild(dotsimage);
+    showmore.appendChild(arrowimage);
+    
     bigboxcontainer.appendChild(creditbar);
     creditbar.appendChild(credit);
     creditbar.appendChild(creditlinkvar);
@@ -1198,7 +1065,9 @@ for (i = 0; i < MODS; i += 1) {
     //ADD QUOTE AND AUTHOR ARRAY POSITION FOR EACH QUOTE
     RandNumArray[i] = rand_num;
     //SET DOTS BUTTON IMAGE
-    showmore.innerHTML = "<img src='./dots_button.png'>";
+    minusimage.innerHTML ="<img src=https://rossshawdesigncom.files.wordpress.com/2019/05/minus_button.png>";
+    dotsimage.innerHTML = "<img src=https://rossshawdesigncom.files.wordpress.com/2019/05/dots_button.png>";
+    arrowimage.innerHTML ="<img src=https://rossshawdesigncom.files.wordpress.com/2019/05/arrow_button-1.png>";
 //PUT MODUAL IN 'EVERYTHING' IN BODY.
     EVERYTHING.appendChild(bigboxcontainer);
 //STYLING  
@@ -1235,8 +1104,17 @@ for (x = 0; x < bigSize.length; x += 1) {
     var TEXTauthorC = document.createElement('h1');
     TEXTauthorC.id = "author";
     TEXTauthorC.className = "authorCC";
+    
+    var creditbarC = document.createElement('div');
+    creditbarC.id = "creditbarC";
+    var creditC = document.createElement('span');
+    creditC.id = "credittextC";
+    var creditClinkvar = document.createElement('span');
+    creditClinkvar.id = "creditlinkC";
 //CREATE STRUCTURE
   //BIG BOX
+    creditC.innerHTML = creditext[x];
+    creditClinkvar.innerHTML = creditlinks[x];
     popupsection.appendChild(chosenquotescreenC);
     chosenquotescreenC.appendChild(upperquoteauthorcontC);
     upperquoteauthorcontC.appendChild(quotecontainerC);
@@ -1244,16 +1122,18 @@ for (x = 0; x < bigSize.length; x += 1) {
     upperquoteauthorcontC.appendChild(middlelineC);
     upperquoteauthorcontC.appendChild(authorcontainerC);
     authorcontainerC.appendChild(TEXTauthorC);
+    chosenquotescreenC.appendChild(creditbarC);
+    creditbarC.appendChild(creditC);
+    creditbarC.appendChild(creditClinkvar);
 //SET BACKGROUND OF POPUP MODUAL TO BACKGROUND IN POSITION [X]
     chosenquotescreenC.style.backgroundImage = bigSize[x];
 }
-
 //GENERATE POPUP SECTIONS IN OVER ALL CONTENT
 EVERYTHING.appendChild(popupsection);
-
+ 
 //FUNCTION ON BOXES
 //EXPANDING [EACH INSTANCE NEEDS IT OWN FUNCTION]
-showmore0.onclick = function() {
+dotsimage0.onclick = function() {
    if(quotebox0.className == "open"){
         //shrink box
         quotebox0.className = "";
@@ -1264,7 +1144,7 @@ showmore0.onclick = function() {
         bigboxcontainer0.className = "open";
     }
     };
-showmore1.onclick = function(){
+dotsimage1.onclick = function(){
    if(quotebox1.className == "open"){
         //shrink box
         quotebox1.className = "";
@@ -1276,7 +1156,7 @@ showmore1.onclick = function(){
     }
     
 };
-showmore2.onclick = function(){
+dotsimage2.onclick = function(){
    if(quotebox2.className == "open"){
         //shrink box
         quotebox2.className = "";
@@ -1289,7 +1169,7 @@ showmore2.onclick = function(){
         bigboxcontainer2.className = "open";
     }
     };
-showmore3.onclick = function(){
+dotsimage3.onclick = function(){
    if(quotebox3.className == "open"){
         //shrink box
         quotebox3.className = "";
@@ -1302,7 +1182,7 @@ showmore3.onclick = function(){
         bigboxcontainer3.className = "open";
     }
     };
-showmore4.onclick = function(){
+dotsimage4.onclick = function(){
    if(quotebox4.className == "open"){
         //shrink box
         quotebox4.className = "";
@@ -1315,7 +1195,7 @@ showmore4.onclick = function(){
         bigboxcontainer4.className = "open";
     }
     };
-showmore5.onclick = function(){
+dotsimage5.onclick = function(){
    if(quotebox5.className == "open"){
         //shrink box
         quotebox5.className = "";
@@ -1328,7 +1208,7 @@ showmore5.onclick = function(){
         bigboxcontainer5.className = "open";
     }
     };
-showmore6.onclick = function(){
+dotsimage6.onclick = function(){
    if(quotebox6.className == "open"){
         //shrink box
         quotebox6.className = "";
@@ -1341,7 +1221,7 @@ showmore6.onclick = function(){
         bigboxcontainer6.className = "open";
     }
     };
-showmore7.onclick = function(){
+dotsimage7.onclick = function(){
    if(quotebox7.className == "open"){
         //shrink box
         quotebox7.className = "";
@@ -1354,7 +1234,7 @@ showmore7.onclick = function(){
         bigboxcontainer7.className = "open";
     }
     };
-showmore8.onclick = function(){
+dotsimage8.onclick = function(){
    if(quotebox8.className == "open"){
         //shrink box
         quotebox8.className = "";
@@ -1367,7 +1247,7 @@ showmore8.onclick = function(){
         bigboxcontainer8.className = "open";
     }
     };
-showmore9.onclick = function(){
+dotsimage9.onclick = function(){
    if(quotebox9.className == "open"){
         //shrink box
         quotebox9.className = "";
@@ -1380,7 +1260,7 @@ showmore9.onclick = function(){
         bigboxcontainer9.className = "open";
     }
     };
-showmore10.onclick = function(){
+dotsimage10.onclick = function(){
    if(quotebox10.className == "open"){
         //shrink box
         quotebox10.className = "";
@@ -1393,7 +1273,7 @@ showmore10.onclick = function(){
         bigboxcontainer10.className = "open";
     }
     };
-showmore11.onclick = function(){
+dotsimage11.onclick = function(){
    if(quotebox11.className == "open"){
         //shrink box
         quotebox11.className = "";
@@ -1406,7 +1286,7 @@ showmore11.onclick = function(){
         bigboxcontainer11.className = "open";
     }
     };
-showmore12.onclick = function(){
+dotsimage12.onclick = function(){
    if(quotebox12.className == "open"){
         //shrink box
         quotebox12.className = "";
@@ -1419,7 +1299,7 @@ showmore12.onclick = function(){
         bigboxcontainer12.className = "open";
     }
     };
-showmore13.onclick = function(){
+dotsimage13.onclick = function(){
    if(quotebox13.className == "open"){
         //shrink box
         quotebox13.className = "";
@@ -1432,7 +1312,7 @@ showmore13.onclick = function(){
         bigboxcontainer13.className = "open";
     }
     };
-showmore14.onclick = function(){
+dotsimage14.onclick = function(){
    if(quotebox14.className == "open"){
         //shrink box
         quotebox14.className = "";
@@ -1445,7 +1325,7 @@ showmore14.onclick = function(){
         bigboxcontainer14.className = "open";
     }
     };
-showmore15.onclick = function(){
+dotsimage15.onclick = function(){
    if(quotebox15.className == "open"){
         //shrink box
         quotebox15.className = "";
@@ -1458,7 +1338,7 @@ showmore15.onclick = function(){
         bigboxcontainer15.className = "open";
     }
     };
-showmore16.onclick = function(){
+dotsimage16.onclick = function(){
    if(quotebox16.className == "open"){
         //shrink box
         quotebox16.className = "";
@@ -1471,7 +1351,7 @@ showmore16.onclick = function(){
         bigboxcontainer16.className = "open";
     }
     };
-showmore17.onclick = function(){
+dotsimage17.onclick = function(){
    if(quotebox17.className == "open"){
         //shrink box
         quotebox17.className = "";
@@ -1484,7 +1364,7 @@ showmore17.onclick = function(){
         bigboxcontainer17.className = "open";
     }
     };
-showmore18.onclick = function(){
+dotsimage18.onclick = function(){
    if(quotebox18.className == "open"){
         //shrink box
         quotebox18.className = "";
@@ -1497,7 +1377,7 @@ showmore18.onclick = function(){
         bigboxcontainer18.className = "open";
     }
     };
-showmore19.onclick = function(){
+dotsimage19.onclick = function(){
    if(quotebox19.className == "open"){
         //shrink box
         quotebox19.className = "";
@@ -1531,7 +1411,7 @@ scrolltobox = ("quotebox9");
 
 //POP UP ANIMATION AND SETTING CONTENTS
 // CHANGE QUOTE BOX NUMBER AND VALUE OF N AS PER
-quotebox0.onclick = function(){
+arrowimage0.onclick = function(){
     var N = 0;
     
     if(openNEW.className == "open"){
@@ -1556,7 +1436,7 @@ quotebox0.onclick = function(){
     }
     scrolltobox = ("quotebox0");
 }; 
-quotebox1.onclick = function(){
+arrowimage1.onclick = function(){
     var N = 1;
     if(openNEW.className == "open"){
         //shrink box
@@ -1580,7 +1460,7 @@ quotebox1.onclick = function(){
     }
     scrolltobox = ("quotebox1");
 }; 
-quotebox2.onclick = function(){
+arrowimage2.onclick = function(){
     var N = 2;
    
     if(openNEW.className == "open"){
@@ -1605,7 +1485,7 @@ quotebox2.onclick = function(){
     }
     scrolltobox = ("quotebox2");
 }; 
-quotebox3.onclick = function(){
+arrowimage3.onclick = function(){
     var N = 3;
     if(openNEW.className == "open"){
         //shrink box
@@ -1629,7 +1509,7 @@ quotebox3.onclick = function(){
     }
     scrolltobox = ("quotebox3");
 };
-quotebox4.onclick = function(){
+arrowimage4.onclick = function(){
     var N = 4;
   
     if(openNEW.className == "open"){
@@ -1654,7 +1534,7 @@ quotebox4.onclick = function(){
     }
     scrolltobox = ("quotebox4");
 }; 
-quotebox5.onclick = function(){
+arrowimage5.onclick = function(){
     var N = 5;
    
     if(openNEW.className == "open"){
@@ -1679,7 +1559,7 @@ quotebox5.onclick = function(){
     }
     scrolltobox = ("quotebox5");
 }; 
-quotebox6.onclick = function(){
+arrowimage6.onclick = function(){
     var N = 6;
     
     if(openNEW.className == "open"){
@@ -1704,7 +1584,7 @@ quotebox6.onclick = function(){
     }
     scrolltobox = ("quotebox6");
 }; 
-quotebox7.onclick = function(){
+arrowimage7.onclick = function(){
     var N = 7;
     
     if(openNEW.className == "open"){
@@ -1729,7 +1609,7 @@ quotebox7.onclick = function(){
     }
     scrolltobox = ("quotebox7");
 }; 
-quotebox8.onclick = function(){
+arrowimage8.onclick = function(){
     var N = 8;
     if(openNEW.className == "open"){
         //shrink box
@@ -1753,7 +1633,7 @@ quotebox8.onclick = function(){
     }
     scrolltobox = ("quotebox8");
 }; 
-quotebox9.onclick = function(){
+arrowimage9.onclick = function(){
     var N = 9;
     if(openNEW.className == "open"){
         //shrink box
@@ -1777,7 +1657,7 @@ quotebox9.onclick = function(){
     }
     scrolltobox = ("quotebox9");
 }; 
-quotebox10.onclick = function(){
+arrowimage10.onclick = function(){
     var N = 10;
     
     if(openNEW.className == "open"){
@@ -1802,7 +1682,7 @@ quotebox10.onclick = function(){
     }
     scrolltobox = ("quotebox10");
 }; 
-quotebox11.onclick = function(){
+arrowimage11.onclick = function(){
     var N = 11;
     if(openNEW.className == "open"){
         //shrink box
@@ -1826,7 +1706,7 @@ quotebox11.onclick = function(){
     }
     scrolltobox = ("quotebox11");
 }; 
-quotebox12.onclick = function(){
+arrowimage12.onclick = function(){
     var N = 12;
    
     if(openNEW.className == "open"){
@@ -1851,7 +1731,7 @@ quotebox12.onclick = function(){
     }
     scrolltobox = ("quotebox12");
 }; 
-quotebox13.onclick = function(){
+arrowimage13.onclick = function(){
     var N = 13;
     if(openNEW.className == "open"){
         //shrink box
@@ -1875,7 +1755,7 @@ quotebox13.onclick = function(){
     }
     scrolltobox = ("quotebox13");
 };
-quotebox14.onclick = function(){
+arrowimage14.onclick = function(){
     var N = 14;
   
     if(openNEW.className == "open"){
@@ -1900,7 +1780,7 @@ quotebox14.onclick = function(){
     }
     scrolltobox = ("quotebox14");
 }; 
-quotebox15.onclick = function(){
+arrowimage15.onclick = function(){
     var N = 15;
    
     if(openNEW.className == "open"){
@@ -1925,7 +1805,7 @@ quotebox15.onclick = function(){
     }
     scrolltobox = ("quotebox15");
 }; 
-quotebox16.onclick = function(){
+arrowimage16.onclick = function(){
     var N = 16;
     
     if(openNEW.className == "open"){
@@ -1950,7 +1830,7 @@ quotebox16.onclick = function(){
     }
     scrolltobox = ("quotebox16");
 }; 
-quotebox17.onclick = function(){
+arrowimage17.onclick = function(){
     var N = 17;
     
     if(openNEW.className == "open"){
@@ -1975,7 +1855,7 @@ quotebox17.onclick = function(){
     }
     scrolltobox = ("quotebox17");
 }; 
-quotebox18.onclick = function(){
+arrowimage18.onclick = function(){
     var N = 18;
     if(openNEW.className == "open"){
         //shrink box
@@ -1999,7 +1879,7 @@ quotebox18.onclick = function(){
     }
     scrolltobox = ("quotebox18");
 }; 
-quotebox19.onclick = function(){
+arrowimage19.onclick = function(){
     var N = 19;
     if(openNEW.className == "open"){
         //shrink box
@@ -2024,6 +1904,227 @@ quotebox19.onclick = function(){
     scrolltobox = ("quotebox19");
 }; 
 
+minusimage0.onclick = function() {
+   if(quotebox0.className == "minus"){
+        //shrink box
+        quotebox0.className = "";
+        bigboxcontainer0.className = "";
+    } else {
+        //expand the box
+        quotebox0.className = "minus";
+        bigboxcontainer0.className = "open";
+    }
+    };
+minusimage1.onclick = function() {
+   if(quotebox1.className == "minus"){
+        //shrink box
+        quotebox1.className = "";
+        bigboxcontainer1.className = "";
+    } else {
+        //expand the box
+        quotebox1.className = "minus";
+        bigboxcontainer1.className = "open";
+    }
+    };
+minusimage2.onclick = function() {
+   if(quotebox2.className == "minus"){
+        //shrink box
+        quotebox2.className = "";
+        bigboxcontainer2.className = "";
+    } else {
+        //expand the box
+        quotebox2.className = "minus";
+        bigboxcontainer2.className = "open";
+    }
+    };
+minusimage3.onclick = function() {
+   if(quotebox3.className == "minus"){
+        //shrink box
+        quotebox3.className = "";
+        bigboxcontainer3.className = "";
+    } else {
+        //expand the box
+        quotebox3.className = "minus";
+        bigboxcontainer3.className = "open";
+    }
+    };
+minusimage4.onclick = function() {
+   if(quotebox4.className == "minus"){
+        //shrink box
+        quotebox4.className = "";
+        bigboxcontainer4.className = "";
+    } else {
+        //expand the box
+        quotebox4.className = "minus";
+        bigboxcontainer4.className = "open";
+    }
+    };
+minusimage5.onclick = function() {
+   if(quotebox5.className == "minus"){
+        //shrink box
+        quotebox5.className = "";
+        bigboxcontainer5.className = "";
+    } else {
+        //expand the box
+        quotebox5.className = "minus";
+        bigboxcontainer5.className = "open";
+    }
+    };
+minusimage6.onclick = function() {
+   if(quotebox6.className == "minus"){
+        //shrink box
+        quotebox6.className = "";
+        bigboxcontainer6.className = "";
+    } else {
+        //expand the box
+        quotebox6.className = "minus";
+        bigboxcontainer6.className = "open";
+    }
+    };
+minusimage7.onclick = function() {
+   if(quotebox7.className == "minus"){
+        //shrink box
+        quotebox7.className = "";
+        bigboxcontainer7.className = "";
+    } else {
+        //expand the box
+        quotebox7.className = "minus";
+        bigboxcontainer7.className = "open";
+    }
+    };
+minusimage8.onclick = function() {
+   if(quotebox8.className == "minus"){
+        //shrink box
+        quotebox8.className = "";
+        bigboxcontainer8.className = "";
+    } else {
+        //expand the box
+        quotebox8.className = "minus";
+        bigboxcontainer8.className = "open";
+    }
+    };
+minusimage9.onclick = function() {
+   if(quotebox9.className == "minus"){
+        //shrink box
+        quotebox9.className = "";
+        bigboxcontainer9.className = "";
+    } else {
+        //expand the box
+        quotebox9.className = "minus";
+        bigboxcontainer9.className = "open";
+    }
+    };
+minusimage10.onclick = function() {
+   if(quotebox10.className == "minus"){
+        //shrink box
+        quotebox10.className = "";
+        bigboxcontainer10.className = "";
+    } else {
+        //expand the box
+        quotebox10.className = "minus";
+        bigboxcontainer10.className = "open";
+    }
+    };
+minusimage11.onclick = function() {
+   if(quotebox11.className == "minus"){
+        //shrink box
+        quotebox11.className = "";
+        bigboxcontainer11.className = "";
+    } else {
+        //expand the box
+        quotebox11.className = "minus";
+        bigboxcontainer11.className = "open";
+    }
+    };
+minusimage12.onclick = function() {
+   if(quotebox12.className == "minus"){
+        //shrink box
+        quotebox12.className = "";
+        bigboxcontainer12.className = "";
+    } else {
+        //expand the box
+        quotebox12.className = "minus";
+        bigboxcontainer12.className = "open";
+    }
+    };
+minusimage13.onclick = function() {
+   if(quotebox13.className == "minus"){
+        //shrink box
+        quotebox13.className = "";
+        bigboxcontainer13.className = "";
+    } else {
+        //expand the box
+        quotebox13.className = "minus";
+        bigboxcontainer13.className = "open";
+    }
+    };
+minusimage14.onclick = function() {
+   if(quotebox14.className == "minus"){
+        //shrink box
+        quotebox14.className = "";
+        bigboxcontainer14.className = "";
+    } else {
+        //expand the box
+        quotebox14.className = "minus";
+        bigboxcontainer14.className = "open";
+    }
+    };
+minusimage15.onclick = function() {
+   if(quotebox15.className == "minus"){
+        //shrink box
+        quotebox15.className = "";
+        bigboxcontainer15.className = "";
+    } else {
+        //expand the box
+        quotebox15.className = "minus";
+        bigboxcontainer15.className = "open";
+    }
+    };
+minusimage16.onclick = function() {
+   if(quotebox16.className == "minus"){
+        //shrink box
+        quotebox16.className = "";
+        bigboxcontainer16.className = "";
+    } else {
+        //expand the box
+        quotebox16.className = "minus";
+        bigboxcontainer16.className = "open";
+    }
+    };
+minusimage17.onclick = function() {
+   if(quotebox17.className == "minus"){
+        //shrink box
+        quotebox17.className = "";
+        bigboxcontainer17.className = "";
+    } else {
+        //expand the box
+        quotebox17.className = "minus";
+        bigboxcontainer17.className = "open";
+    }
+    };
+minusimage18.onclick = function() {
+   if(quotebox18.className == "minus"){
+        //shrink box
+        quotebox18.className = "";
+        bigboxcontainer18.className = "";
+    } else {
+        //expand the box
+        quotebox18.className = "minus";
+        bigboxcontainer18.className = "open";
+    }
+    };
+minusimage19.onclick = function() {
+   if(quotebox19.className == "minus"){
+        //shrink box
+        quotebox19.className = "";
+        bigboxcontainer19.className = "";
+    } else {
+        //expand the box
+        quotebox19.className = "minus";
+        bigboxcontainer19.className = "open";
+    }
+    };
+
 function Scrollto(){
 document.getElementById(scrolltobox).scrollIntoView();
 }
@@ -2041,7 +2142,500 @@ popupsection.onclick = function(){
     Scrollto();
     
 };
-    </script>
+
+howtoclose.onclick = function(){
+        howtousebig.className = "closed";
+}
+
+headerbarhelp.onclick = function(){
+    if(howtousebig.className == "closed"){
+        //shrink box
+        howtousebig.className = "";
+    } else {
+        //expand the box
+        howtousebig.className = "closed";
+    }
+}
+
+
+
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("headerbarlogo").style.display = "block";
+  } else {
+    document.getElementById("headerbarlogo").style.display = "none";
+  }
+}
+
+
+
+
+
+    
+    
+    
+    
+    
+</script>
+    
+<style>
+html{
+    font-family: "helvetica";
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: crosshair;
+}
+body{
+    margin:0;
+}
+
+.headerbar, .headerbar1{
+    height: 10%;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    background-color: black;
+    z-index: 100;
+}
+.headerbar{
+    justify-content: space-between;
+    max-height: 5%;
+}
+.headerbar1{
+    justify-content: center;
+    max-height: 10%;  
+}
+.headerbarlogo{
+    padding: 0;
+    width: auto;
+    height: 80%;
+}
+.loadmorebutton{
+    padding: 0;
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+button{
+    all: initial;
+    all: inherit;
+    all: unset;
+}
+.headerbarhelp{
+    padding: 0;
+    width: auto;
+    height: 80%;
+    max-height: 80%;
+}
+#howtousebig.open{
+    height:  auto;
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     z-index: 1;
+}
+.howtousecontents{
+    padding-top: 1%;
+    width: 100%;
+
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.howto-bottomtext{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;  
+}
+.howtouse{
+    display: flex; 
+}
+.howtolink{
+    font-size: 10px;
+    width: 100%;
+    text-align: right;
+    padding-right: 2%;
+}
+.howto-box{
+    max-width: 50%;
+    width: 50%;
+    padding: 2%;
+     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;   
+}
+#howtoclose{
+    color: dimgrey;
+    cursor: pointer;
+    padding: 2%;   
+}
+#howtousebig.closed{
+   display: none;
+}
+
+
+
+h1{
+    font-weight: bold;
+}
+/*NUMBER OF BLOCKS NEEDS ADDING HERE*/
+#bigboxcontainer0,
+#bigboxcontainer1,
+#bigboxcontainer2,
+#bigboxcontainer3,
+#bigboxcontainer4,
+#bigboxcontainer5,
+#bigboxcontainer6,
+#bigboxcontainer7,
+#bigboxcontainer8,
+#bigboxcontainer9,
+#bigboxcontainer10,
+#bigboxcontainer11,
+#bigboxcontainer12,
+#bigboxcontainer13,
+#bigboxcontainer14,
+#bigboxcontainer15,
+#bigboxcontainer16,
+#bigboxcontainer17,
+#bigboxcontainer18,
+#bigboxcontainer19
+{
+    transition: 1s;
+    background-repeat: no-repeat;
+    background-position: top;
+    overflow: hidden;
+    background-size: cover;
+    background-color: deeppink;
+}
+
+#bigboxcontainer0.open,
+#bigboxcontainer1.open,
+#bigboxcontainer2.open,
+#bigboxcontainer3.open,
+#bigboxcontainer4.open,
+#bigboxcontainer5.open,
+#bigboxcontainer6.open,
+#bigboxcontainer7.open,
+#bigboxcontainer8.open,
+#bigboxcontainer9.open,
+#bigboxcontainer10.open,
+#bigboxcontainer11.open,
+#bigboxcontainer12.open,
+#bigboxcontainer13.open,
+#bigboxcontainer14.open,
+#bigboxcontainer15.open,
+#bigboxcontainer16.open,
+#bigboxcontainer17.open,
+#bigboxcontainer18.open,
+#bigboxcontainer19.open
+{
+    background-position: center;
+    overflow: visible;
+    transition: 1s;
+    
+}
+
+#quotebox,
+#quotebox0,
+#quotebox1,
+#quotebox2,
+#quotebox3,
+#quotebox4,
+#quotebox5,
+#quotebox6,
+#quotebox7,
+#quotebox8,
+#quotebox9,
+#quotebox10,
+#quotebox11,
+#quotebox12,
+#quotebox13,
+#quotebox14,
+#quotebox15,
+#quotebox16,
+#quotebox17,
+#quotebox18,
+#quotebox19
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+    height: 100%;
+    max-height: 40%;
+    transition: 2s;
+    color: white;
+    transition: 2s;
+}
+
+#quotebox.open,
+#quotebox0.open,
+#quotebox1.open,
+#quotebox2.open,
+#quotebox3.open,
+#quotebox4.open,
+#quotebox5.open,
+#quotebox6.open,
+#quotebox7.open,
+#quotebox8.open,
+#quotebox9.open,
+#quotebox10.open,
+#quotebox11.open,
+#quotebox12.open,
+#quotebox13.open,
+#quotebox14.open,
+#quotebox15.open,
+#quotebox16.open,
+#quotebox17.open,
+#quotebox18.open,
+#quotebox19.open
+{
+    max-height: 150%;
+    transition: 2s;
+}
+    
+
+#quotebox.minus,
+#quotebox0.minus,
+#quotebox1.minus,
+#quotebox2.minus,
+#quotebox3.minus,
+#quotebox4.minus,
+#quotebox5.minus,
+#quotebox6.minus,
+#quotebox7.minus,
+#quotebox8.minus,
+#quotebox9.minus,
+#quotebox10.minus,
+#quotebox11.minus,
+#quotebox12.minus,
+#quotebox13.minus,
+#quotebox14.minus,
+#quotebox15.minus,
+#quotebox16.minus,
+#quotebox17.minus,
+#quotebox18.minus,
+#quotebox19.minus
+{
+    max-height: 150%;
+    transition: 2s;
+    opacity: 0;
+}
+    
+
+#quoteboxC{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+    height: 100%;
+    transition: 2s;
+    color: white;
+    max-height: 150%;
+}
+
+
+#quotecontainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+    width: 70%;
+    max-height: 40%;
+    color: white;
+    transition: 2s;
+}
+
+#quote{
+    margin-bottom: auto;
+    font-size: 2.5rem;
+}
+
+
+#line{
+    background-color: white;
+    width: 1px;
+    min-height: 50px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#author{
+    font-size: 0.75em;
+    margin: auto;
+    padding: 10px;
+    
+}
+
+#authorcontainer{
+    font-size: 2rem;
+    border: 1px solid white; 
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom:50px;
+    
+}
+
+#creditbar0,#creditbar1,#creditbar2,#creditbar3,#creditbar4,#creditbar5,#creditbar6,#creditbar7,#creditbar8,#creditbar9,#creditbar10,#creditbar11,#creditbar12,#creditbar13,#creditbar14,#creditbar15,#creditbar16,#creditbar17,#creditbar18,#creditbar19,#creditbarC{
+    display: block;
+    justify-content: center;
+    flex-direction: column;
+    text-align: right;
+    color: white;
+    
+    
+}
+
+#credittext0,#credittext1,#credittext2,#credittext3,#credittext4,#credittext5,#credittext6,#credittext7,#credittext8,#credittext9,#credittext10,#credittext11,#credittext12,#credittext13,#credittext14,#credittext15,#credittext16,#credittext17,#credittext18,#credittext19, #creditlink0,#creditlink1,#creditlink2,#creditlink3,#creditlink4,#creditlink5,#creditlink6,#creditlink7,#creditlink8,#creditlink9,#creditlink10,#creditlink11,#creditlink12,#creditlink13,#creditlink14,#creditlink15,#creditlink16,#creditlink17,#creditlink18,#creditlink19,#creditClink{
+    font-size: 15px;
+    color: white;
+    padding: 5px;
+}
+
+a{
+color: orange;
+outline: none;
+}
+
+a:any-link{
+color: orange;
+text-decoration: none;
+}
+
+
+a:hover{
+    color: yellow;
+    text-decoration: none;
+}
+
+
+
+
+
+/* expand button styles*/
+#showmore0,#showmore1,#showmore2,#showmore3,#showmore4,#showmore5,#showmore6,#showmore7,#showmore8,#showmore9,#showmore10,#showmore11,#showmore12,#showmore13,#showmore14,#showmore15,#showmore16,#showmore17,#showmore18,#showmore19{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    margin: auto;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+    
+img{
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+
+#chosenquotescreenC{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+    background-color: deeppink;
+}
+
+#chosenquotescreenC h1{
+    color: white;
+}
+
+#popupsection{
+    right: -100%;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 120%;
+    max-height: 1500%;
+    z-index: 3;
+    top: 0;
+    transition-property: right;
+    transition: 0.3s;
+}
+
+#popupsection.open{
+    opacity: 1;
+    display: block;
+    position: absolute;
+    right: 0;
+    transition-property: right;
+    transition: 0.3s;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+    #authorcontainer{
+    font-size: 1.5rem;
+}
+    #quote{
+
+    font-size: 2rem;
+}
+
+
+}
+
+
+@media only screen and (max-width: 500px) {
+  #authorcontainer{
+    font-size: 1.5rem;
+}
+    #quote{
+
+    font-size: 2rem;
+}
+}
+
+
+.backtosite{
+    -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+
+</style>
+    
+  <div class="headerbar1">
+    <button onclick="toppopupFunction()"  class="headerbarlogo" title="Go to top">    
+        <input type="image"  class="loadmorebutton" src= "https://rossshawdesigncom.files.wordpress.com/2019/05/soul_aid_loadmore.png" onClick="document.location.reload(true)"> 
+    </button>
+ </div>
     
 </body>
 </html>
